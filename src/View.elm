@@ -23,8 +23,8 @@ addIngredient =
     div []
         [ ingredientInput Rosmary
         , ingredientInput Thyme
-        , ingredientInput Elderberry
-        , ingredientInput MustardSeed
+        -- , ingredientInput Elderberry
+        -- , ingredientInput MustardSeed
         ]
 
 
@@ -67,3 +67,11 @@ resultText effect =
 
         Poison n ->
             "Poison " ++ (toString n)
+
+valuesTable : List (List PotionEffect) -> Html a
+valuesTable items =
+  table [] <| List.map valueRow
+
+valueRow : List PotionEffect -> Html a
+valueRow items =
+  tr [] <| List.map (\effect -> td [] [ text <| resultText effect ])

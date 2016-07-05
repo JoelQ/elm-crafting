@@ -17,8 +17,8 @@ type PotionEffect
 type Plant
     = Rosmary
     | Thyme
-    | Elderberry
-    | MustardSeed
+    -- | Elderberry
+    -- | MustardSeed
 
 
 type alias Ingredient =
@@ -28,9 +28,10 @@ type alias Ingredient =
 type alias Model =
     { rosemary : Int
     , thyme : Int
-    , elderberry : Int
-    , mustardSeed : Int
+    -- , elderberry : Int
+    -- , mustardSeed : Int
     , result : Maybe PotionEffect
+    , values : List (List PotionEffect)
     }
 
 
@@ -38,7 +39,8 @@ initialModel : Model
 initialModel =
     { rosemary = 0
     , thyme = 0
-    , elderberry = 0
-    , mustardSeed = 0
+    -- , elderberry = 0
+    -- , mustardSeed = 0
     , result = Nothing
+    , values = []
     }
